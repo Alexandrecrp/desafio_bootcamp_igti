@@ -30,6 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Run `npm install -g json-server`
 
-## run backend with
+## Run backend with
 
 `json-server --watch despesas.json`
