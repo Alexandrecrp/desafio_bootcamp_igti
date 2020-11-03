@@ -1,0 +1,24 @@
+<br />
+<br />
+<div class="container">
+  <div class="alert-heading">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Senador</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let senador of senadores">
+          <td>{{ senador.id }}</td>
+          <td>{{ senador.nomeSenador }}</td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/despesasSenadores', senador.id]">Ver despesas</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

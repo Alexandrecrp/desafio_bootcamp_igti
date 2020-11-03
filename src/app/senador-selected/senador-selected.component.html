@@ -1,0 +1,57 @@
+<div class="container">
+  <br />
+  <div class="text-right">
+    <a class="btn btn-primary" (click)="goBack()">Voltar</a>
+  </div>
+  <br />
+  <h4>Senador(a): {{ despesasSenadores.nomeSenador }}</h4>
+  <br />
+  <div class="alert alert-primary" role="alert">
+    Resumo das despesas
+  </div>
+  <div class="alert-heading">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Código da Despesa</th>
+          <th scope="col">Despesa</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Despesa of camposDespesas">
+          <td>{{ Despesa.id }}</td>
+          <td>{{ Despesa.descricao }}</td>
+          <td>{{ Despesa.total | number: "1.2-2" }}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td></td>
+          <th>{{ totalDesp | number: "1.2-2" }}</th>
+        </tr>
+      </tbody>
+    </table>
+    <div class="alert alert-primary" role="alert">
+      Disciminação das despesas
+    </div>
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">Código da Despesa</th>
+          <th scope="col">Fornecedor</th>
+          <th scope="col">Data</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let DespesaDisciminada of despesasSenadores.despesas">
+          <td>{{ DespesaDisciminada.tipo }}</td>
+          <td>{{ DespesaDisciminada.fornec }}</td>
+          <td>{{ DespesaDisciminada.dia }}/{{ DespesaDisciminada.mes }}/{{ DespesaDisciminada.ano }}</td>
+          <td>{{ DespesaDisciminada.valor | number: "1.2-2" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
